@@ -1,0 +1,6 @@
+# Bash Color Red / Green / Yellow / Blue / Magenta / Cyan - R = Red / b = Bolt / Rb = Red Bolt / BRb = Background Red Bolt ; NC = No color
+R=$(echo -e "\e[31m");G=$(echo -e "\e[32m");Y=$(echo -e "\e[33m");B=$(echo -e "\e[34m");M=$(echo -e "\e[35m");C=$(echo -e "\e[36m");
+Rb=$(echo -e "\e[31m\e[1m");Gb=$(echo -e "\e[32m\e[1m");Yb=$(echo -e "\e[33m\e[1m");Bb=$(echo -e "\e[34m\e[1m");Mb=$(echo -e "\e[35m\e[1m");
+Cb=$(echo -e "\e[36m\e[1m");BR=$(echo -e "\e[41m");BG=$(echo -e "\e[42m");BY=$(echo -e "\e[43m");BB=$(echo -e "\e[44m");BM=$(echo -e "\e[45m");
+BC=$(echo -e "\e[46m");BRb=$(echo -e "\e[41m\e[1m");BGb=$(echo -e "\e[42m\e[1m");BYb=$(echo -e "\e[43m\e[1m");BBb=$(echo -e "\e[44m\e[1m");
+BMb=$(echo -e "\e[45m\e[1m");BCb=$(echo -e "\e[46m\e[1m");b=$(echo -e "\e[1m");NC=$(echo -e "\e[0m"); #echo -e "$BMb hello $NC"
