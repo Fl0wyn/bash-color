@@ -1,21 +1,21 @@
-Download :
+# Download :
 curl -sL git.io/bashcolor > ~/.bashcolor
 
-Import into a script :
+# Import into a script :
 source ~/.bashcolor
 
-Use :
+# Use :
 echo -e "$Gbu Hello $NC"
 
 ## Foreground ##
 
 # Color
-R=$(echo -e "\e[31m")                   # Red
-G=$(echo -e "\e[32m")                   # Green
-Y=$(echo -e "\e[33m")                   # Yellow
-B=$(echo -e "\e[34m")                   # Blue
-M=$(echo -e "\e[35m")                   # Magenta
-C=$(echo -e "\e[36m")                   # Cyan
+R=$(echo -e "\e[31m") Red
+G=$(echo -e "\e[32m") Green
+Y=$(echo -e "\e[33m") Yellow
+B=$(echo -e "\e[34m") Blue
+M=$(echo -e "\e[35m") Magenta
+C=$(echo -e "\e[36m") Cyan
 
 # Color + Light
 Rl=$(echo -e "\e[91m")                  # Red + Light
