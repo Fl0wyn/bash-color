@@ -1,9 +1,15 @@
-## Download
-`curl -sL git.io/bashcolor > ~/.bashcolor`
-## Import into a script
-`source ~/.bashcolor`
-## Use
-`echo -e "$Gbu Hello $NC"`
+#### Téléchargement :
+```
+curl -sL git.io/bashcolor > ~/.bashcolor
+```
+## Importer le fichier source dans un script :
+```
+source ~/.bashcolor
+```
+## Utilisation :
+```
+echo -e "$Gbu Hello $NC"
+```
 
 ***
 
