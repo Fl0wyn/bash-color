@@ -1,3 +1,4 @@
+# Colorer facilement vos scripts 
 #### Téléchargement :
 ```
 curl -sL git.io/bashcolor > ~/.bashcolor
