@@ -1,13 +1,13 @@
-# Colorer facilement vos scripts 
-#### Téléchargement :
+# Bash color
+## Download :
 ```
 curl -sL git.io/bashcolor > ~/.bashcolor
 ```
-## Importer le fichier source dans un script :
+## Import the source file into a script :
 ```
 source ~/.bashcolor
 ```
-## Utilisation :
+## Use :
 ```
 echo -e "$Gbu Hello $NC"
 ```
