@@ -1,13 +1,13 @@
 # Bash color
-## Download :
+### Download :
 ```
 curl -sL git.io/bashcolor > ~/.bashcolor
 ```
-## Import the source file into a script :
+### Import the source file into a script :
 ```
 source ~/.bashcolor
 ```
-## Use :
+### Use :
 ```
 echo -e "$Gbu Hello $NC"
 ```
