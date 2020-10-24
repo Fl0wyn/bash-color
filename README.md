@@ -1,19 +1,3 @@
-# Bash color
-### Download :
-```
-curl -sL git.io/bashcolor > ~/.bashcolor
-```
-### Import the source file into a script :
-```
-source ~/.bashcolor
-```
-### Use :
-```
-echo -e "$Gbu Hello $NC"
-```
-
-***
-
 # Foreground
 
 ### Color
