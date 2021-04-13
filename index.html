@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Bash Color</title>
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-main>
+
+                <v-app-bar color="white">
+                    <v-img max-width="30" class="mx-6" src="images/bash.svg"></v-img>
+                    <v-toolbar-title class="font-weight-bold text-h6">
+                        Bash Col<u class="green--text">o</u>r
+                    </v-toolbar-title>
+                    <v-spacer></v-spacer>
+
+                    <a href="https://github.com/debmus/bash_color" target="_blank" rel="noopener noreferrer">
+                        <v-img max-width="30" class="ma-3" src="images/github.svg"></v-img>
+                    </a>
+
+                </v-app-bar>
+
+                <v-container>
+
+                    <v-card flat class="d-flex flex-column justify-space-between align-center text-center">
+                        <v-img max-width="160" class="ma-6" src="images/bash.svg"></v-img>
+
+                        <v-card-title class="font-weight-bold text-h3">
+                            Bash Col<u class="green--text">o</u>r
+                        </v-card-title>
+                        <p class="grey--text">A simple little tool to help you make your bash scripts prettier
+                        </p>
+                    </v-card>
+
+                    <v-divider dark class="my-6"></v-divider>
+
+                    <v-row>
+                        <v-col cols="12" sm="12" lg="4">
+                            <v-card min-height="320">
+                                <v-card-text>
+                                    <v-row>
+
+                                        <v-col cols="12" sm="4" md="4">
+                                            Foreground Color
+                                            <v-radio-group v-model="FgColor" mandatory>
+                                                <v-radio label="Default" :color="color" value="white--text, "></v-radio>
+                                                <v-radio label="Red" :color="color" value="red--text, 1"></v-radio>
+                                                <v-radio label="Green" :color="color" value="green--text, 2">
+                                                </v-radio>
+                                                <v-radio label="Yellow" :color="color" value="yellow--text, 3">
+                                                </v-radio>
+                                                <v-radio label="Blue" :color="color" value="blue--text, 4">
+                                                </v-radio>
+                                                <v-radio label="Magenta" :color="color" value="purple--text, 5">
+                                                </v-radio>
+                                                <v-radio label="Cyan" :color="color" value="cyan--text, 6">
+                                                </v-radio>
+                                            </v-radio-group>
+                                        </v-col>
+
+                                        <v-col cols="12" sm="4" md="4">
+                                            Background color
+                                            <v-radio-group v-model="BgColor" mandatory>
+                                                <v-radio label="Default" :color="color" value=", ">
+                                                </v-radio>
+                                                <v-radio label="Red" :color="color" value="text-no-wrap red, 1">
+                                                </v-radio>
+                                                <v-radio label="Green" :color="color" value="text-no-wrap green, 2">
+                                                </v-radio>
+                                                <v-radio label="Yellow" :color="color" value="text-no-wrap yellow, 3">
+                                                </v-radio>
+                                                <v-radio label="Blue" :color="color" value="text-no-wrap blue, 4">
+                                                </v-radio>
+                                                <v-radio label="Magenta" :color="color" value="text-no-wrap purple, 5">
+                                                </v-radio>
+                                                <v-radio label="Cyan" :color="color" value="text-no-wrap cyan, 6">
+                                                </v-radio>
+                                            </v-radio-group>
+                                        </v-col>
+
+                                        <v-col cols="12" sm="4" md="4">
+                                            Style
+                                            <v-checkbox v-model="Bold" label="Bold" :color="color"
+                                                value='font-weight-bold' hide-details>
+                                            </v-checkbox>
+                                            <v-checkbox v-model="Underline" label="Underline" :color="color"
+                                                value="text-decoration-underline" hide-details>
+                                            </v-checkbox>
+                                            <v-checkbox v-model="Light" label="Light *" :color="color" value=" "
+                                                hide-details>
+                                            </v-checkbox>
+                                            <v-divider class="my-6"></v-divider>
+
+                                            * The light function is not visible in the overview
+
+                                        </v-col>
+
+                                    </v-row>
+                                </v-card-text>
+
+                            </v-card>
+                        </v-col>
+
+                        <v-col cols="12" sm="12" lg="8">
+                            <v-card color="grey darken-4" min-height="320" class="rounded-t-0">
+
+                                <v-system-bar color="grey lighten-2" windows>
+                                    <v-spacer></v-spacer>
+                                    <v-icon color="green">mdi-checkbox-blank-circle</v-icon>
+                                    <v-icon color="orange">mdi-checkbox-blank-circle</v-icon>
+                                    <v-icon color="red">mdi-checkbox-blank-circle</v-icon>
+                                </v-system-bar>
+                                <h3 class="float-left ma-3 white--text">bash@color:~ $</h3>
+                                <h3 class="ma-3 white--text font-weight-regular">echo -e "
+
+                                    <!-- FgColor -->
+                                    <span v-if="(FgColor.split(',')[1]) !== ' '">\e[<span v-if="Light">9</span><span
+                                            v-else>3</span><span v-text="(FgColor.split(', ')[1])"></span>m</span>
+
+                                    <!-- BgColor -->
+                                    <span v-if="(BgColor.split(',')[1]) !== ' '">\e[<span v-if="Light">10</span><span
+                                            v-else>4</span><span v-text="(BgColor.split(', ')[1])"></span>m</span>
+
+                                    <!-- Bold -->
+                                    <span v-if="Bold">\e[1<span></span>m</span>
+
+                                    <!-- Underline -->
+                                    <span v-if="Underline">\e[4<span></span>m</span>
+
+                                    Lorem ipsum "
+                                </h3>
+
+                                <h3 class="float-left ma-3 white--text">bash@color:~ $</h3>
+
+                                <h3 class="ma-6 font-weight-regular"><span :class="[
+                                        (FgColor.split(',')[0]),
+                                        (BgColor.split(',')[0]),
+                                        Bold,
+                                        Underline,
+                                        Light,
+                                        ]">Lorem ipsum
+                                    </span></h3>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+
+                </v-container>
+
+            </v-main>
+
+        </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data() {
+                return {
+                    color: 'green',
+
+                    FgColor: 'white--text',
+                    BgColor: '',
+                    Bold: '',
+                    Underline: '',
+                    Light: '',
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
